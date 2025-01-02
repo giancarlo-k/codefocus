@@ -3,13 +3,14 @@ import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 import path from 'path';
 import session from 'express-session';
+import connectMongo from 'connect-mongo';
 import { fileURLToPath } from 'url';
 import {routes as authRoutes} from './auth/routes.js'
 import {routes as snippetRoutes} from './snippets/routes.js'
 import { isAuthenticated } from './auth/controller.js'
 
 const app = express();
-const port = 80;
+const port = 3000;
 dotenv.config();
 
 // middleware
@@ -20,6 +21,7 @@ app.use(session({
   secret: 'idkwhatthisdoesngl', 
   resave: false,
   saveUninitialized: true,
+  store: new MongoStore({ mongooseConnection: mongoose.connection })
 }));
 
 
