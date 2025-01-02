@@ -23,7 +23,10 @@ app.use(session({
   secret: 'idkwhatthisdoesngl', 
   resave: false,
   saveUninitialized: true,
-  store: new MongoStore({ mongooseConnection: mongoose.connections[0] })
+  store: new MongoStore({
+    mongoUrl: `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@cluster0.ktdpn.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`
+  })
+  })
 }));
 
 
