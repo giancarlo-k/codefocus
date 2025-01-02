@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign up</title>
+  <link rel="stylesheet" href="../styles/signup_login.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@200..800&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="main-container">
+    <h1>Create Account</h1>
+    <div class="already-div">Already have an account? <a href="/">Login</a></div>
+    <form method="post" action="/signup">
+
+      <div class="signup-username-box login-username-box">
+        <input id="username" autocomplete="off" spellcheck="false" type="text" name="username" required placeholder="Username">
+        <span style=" font-size: 12px; opacity: 0; color: red;" class="username-taken">Username taken</span>
+      </div>
+
+      <div class="pwd-box">
+        <img src="../images/view.png">
+        <input id="first-password" type="password" required placeholder="Password" autocomplete="off">
+        <span class="password-rules-span">
+         Must be at least  
+         <span class="character-pwd-span">6 characters long</span>
+         and
+         <span class="number-pwd-span">include a number</span>
+        </span>
+      </div> 
+
+      <div class="pwd-box">
+        <img class="confirm-view" src="../images/view.png">
+        <input id="confirm-password" type="password" name="password" required placeholder="Confirm Password">
+        <span style="opacity: 0; color: red;" class="confirm-password-span">Passwords do not match</span>
+      </div>
+
+      <button id="submit-btn" type="submit">Create Account</button>
+    </form>
+  </div>
+  <script src="../scripts/signup.js"></script>
+</body>
+</html>

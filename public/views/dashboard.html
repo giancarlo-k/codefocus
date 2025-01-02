@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="../styles/dashboard.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@200..800&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />         
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/monaco-editor@latest/min/vs/editor/editor.main.css">
+</head>
+<body>
+  <div class="main">   
+    <div class="left-sidebar-container">
+
+      <div class="logo">{ Codefocus }</div>
+  
+      
+      <div id="create-snippet-button" class="create-snippet-container sidebar-hover">
+        <img style=" margin-left: 20px;" width="22" src="../images/add.png">
+        <span>Create Snippet</span>
+      </div>
+
+      <div class="filters-title-container">
+        <span>Filters</span>
+      </div>
+
+      <div class="favorites-container">
+        <img style="margin-left: 20px;" width="16" src="../images/heart.png">
+        <span>Favorites</span>
+      </div>
+
+      <div style="margin-top: 20px; margin-bottom: 20px;" class="language-filter-container">
+        <select class="filter-select"></select>
+      </div>
+      
+      <div class="sort-time-filter-container">
+        <select class="filter-select">
+          <option value="newest-first">Newest First</option>
+          <option value="oldest-first">Oldest First</option>
+        </select>
+      </div>
+  
+      <a href="/logout" class="logout-container sidebar-hover">
+        <img width="18" src="../images/out.png">
+       <span id="logout-span">Logout</span>
+      </a>
+    </div>
+
+    <div class="snippet-list-container">
+      <div class="search-container">
+        <input id="searchbar" type="search" class="searchbar" placeholder="Search" autocomplete="off" spellcheck="false">
+        <span class="total-snippets-span"></span>
+      </div>
+
+      <!--This contains all the actual snippets themselves, everything above is the search bar-->
+      <div class="snippet-blocks-container"></div>
+
+
+    </div>
+
+    <div class="empty-snippet-container">
+      { Codefocus }
+    </div>
+
+    <div style="opacity: 0;"  class="snippet-container">
+
+
+      <div class="snippet-info"></div>
+
+      <div class="save-code-container">
+        <button class="save-code-button">Save Code</button>
+        <span>Or press Command + S (Mac) / Ctrl + S (Windows & Linux)</span>
+      </div>
+
+
+      <div class="editor-container">
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="https://cdn.jsdelivr.net/npm/monaco-editor@latest/min/vs/loader.js"></script>
+  <script type="module" src="../scripts/dashboard/sidebars.js"></script>
+  <script type="module" src="../scripts/dashboard/dashboard.js"></script>
+  <script type="module" src="../scripts/dashboard/filters.js"></script>
+  <script type="module" src="../scripts/utils.js"></script>
+</body>
+</html>

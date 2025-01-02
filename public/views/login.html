@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <link rel="stylesheet" href="../styles/signup_login.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@200..800&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="main-container login-container">
+    <h1>Login</h1>
+    <div class="already-div">Don't have an account? <a href="/signup">Sign Up</a></div>
+    <form method="post" action="/login">
+
+      <div class="login-username-box">
+        <input id="username" autocomplete="off" spellcheck="false" type="text" name="username" required placeholder="Username">
+        <span class="username-not-found" style=" opacity: 0; font-size: 12px; color: red;">Username not found</span>
+      </div>
+
+      <div class="pwd-box">
+        <img src="../images/view.png">
+        <input id="first-password" type="password" name="password" required placeholder="Password" autocomplete="off">
+        <span class="incorrect-password" style=" opacity: 0; font-size: 12px; color: red;">Incorrect password</span>
+      </div> 
+
+      <div class="remember-me-box">
+        <span>Remember me</span>
+        <input class="remember-input" name="remember" type="checkbox">
+      </div>
+
+      <button id="submit-btn" type="submit">Login</button>
+    </form>
+    <script src="../scripts/login.js"></script>
+  </div>
+</body>
+</html>
