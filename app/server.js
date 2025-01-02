@@ -17,13 +17,13 @@ dotenv.config();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-const MongoStore = connectMongo(session);
+const MongoDbStore = require('connect-mongo');
 
 app.use(session({
   secret: 'idkwhatthisdoesngl', 
   resave: false,
   saveUninitialized: true,
-  store: new MongoStore({ mongoUrl: `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@cluster0.ktdpn.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0` })
+  store: MongoDbStore.create({ mongoUrl: `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@cluster0.ktdpn.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0` })
 }));
 
 
