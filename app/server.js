@@ -17,7 +17,7 @@ dotenv.config();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-const MongoStore = connectMongo(session);
+const MongoStore = new connectMongo(session);
 
 app.use(session({
   secret: 'idkwhatthisdoesngl', 
