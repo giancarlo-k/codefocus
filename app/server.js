@@ -3,10 +3,10 @@ import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 import path from 'path';
 import session from 'express-session';
-import connectMongo from 'connect-mongo';
+import { default as connectMongoDBSession } from 'connect-mongodb-session';
 import { fileURLToPath } from 'url';
-import {routes as authRoutes} from './auth/routes.js';
-import {routes as snippetRoutes} from './snippets/routes.js';
+import { routes as authRoutes } from './auth/routes.js';
+import { routes as snippetRoutes } from './snippets/routes.js';
 import { isAuthenticated } from './auth/controller.js';
 
 const app = express();
@@ -17,24 +17,23 @@ dotenv.config();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Use 'new' with MongoStore
-const MongoStore = connectMongo(session);
+// Initialize MongoDB session store
+const MongoDBStore = connectMongoDBSession(session);
 
-app.use(
-  session({
-    secret: 'idkwhatthisdoesngl',
-    resave: false,
-    saveUninitialized: true,
-    store: new MongoStore({
-      mongoUrl: `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@cluster0.ktdpn.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`,
-    }),
-  })
-);
+const store = new MongoDBStore({
+  uri: `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@cluster0.ktdpn.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`,
+  collection: 'sessions',
+});
 
-// database connection
-await mongoose.connect(
-  `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@cluster0.ktdpn.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`
-);
+app.use(session({
+  secret: 'idkwhatthisdoesngl',
+  resave: false,
+  saveUninitialized: true,
+  store: store, // Use MongoDBStore for session storage
+}));
+
+// database
+await mongoose.connect(`mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@cluster0.ktdpn.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`);
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
