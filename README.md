@@ -16,8 +16,8 @@
 
 | Sample |
 | --- | 
-| ![alt text](/images/screenshots/light-desktop-home.png) |  
-| ![alt text](/images/screenshots/light-desktop-pkmn.png) | 
+| ![alt text](https://raw.githubusercontent.com/giancarlo-k/codefocus/refs/heads/main/Images/dashboard.png) |  
+| ![alt text](https://raw.githubusercontent.com/giancarlo-k/codefocus/refs/heads/main/Images/form.png) | 
 
 
 <h2>Skills & Concepts Learned</h2>
