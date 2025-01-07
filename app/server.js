@@ -7,7 +7,7 @@ import session from 'express-session';
 import connectMongo from 'connect-mongo';
 
 import { default as connectMongoDBSession } from 'connect-mongodb-session';
->>>>>>> b7ba40ac4e1fdb8b080573eb149ae8e8837203d0
+
 import { fileURLToPath } from 'url';
 import { routes as authRoutes } from './auth/routes.js';
 import { routes as snippetRoutes } from './snippets/routes.js';
