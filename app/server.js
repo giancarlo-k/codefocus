@@ -33,7 +33,7 @@ app.use(session({
   secret: 'idkwhatthisdoesngl',
   resave: false,
   saveUninitialized: true,
-  store: new MongoStore({ mongooseConnection: mongoose.connection })
+  store: store
 }));
 
 // database
