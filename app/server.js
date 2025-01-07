@@ -3,9 +3,9 @@ import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 import path from 'path';
 import session from 'express-session';
-<<<<<<< HEAD
+
 import connectMongo from 'connect-mongo';
-=======
+
 import { default as connectMongoDBSession } from 'connect-mongodb-session';
 >>>>>>> b7ba40ac4e1fdb8b080573eb149ae8e8837203d0
 import { fileURLToPath } from 'url';
@@ -33,11 +33,11 @@ app.use(session({
   secret: 'idkwhatthisdoesngl',
   resave: false,
   saveUninitialized: true,
-<<<<<<< HEAD
+
   store: new MongoStore({ mongooseConnection: mongoose.connection })
-=======
+
   store: store, // Use MongoDBStore for session storage
->>>>>>> b7ba40ac4e1fdb8b080573eb149ae8e8837203d0
+
 }));
 
 // database
