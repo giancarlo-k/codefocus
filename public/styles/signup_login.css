@@ -189,3 +189,25 @@ input::-webkit-contacts-auto-fill-button {
   accent-color: var(--main-purple);
   margin-top: 4px;
 }
+
+/*---------------------------------Responsiveness---------------------------------*/
+
+@media only screen and (max-width: 800px) {
+  .main-container {
+    width: 23rem;
+  }
+
+  form {
+    width: 70%;
+  }
+
+  #first-password-view-img {
+    bottom: 40px;
+  }
+
+  #submit-btn {
+    font-size: 14px;
+  }
+
+
+}
