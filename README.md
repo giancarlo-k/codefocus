@@ -11,6 +11,7 @@
  - Organized snippet filtering for a seamless browsing experience
  - Fully editable snippet metadata, customizable at any time
  - Custom code color theme
+ - *Unresponsive for mobile at the moment*
 
 <h2>Screenshots</h2>
 
